@@ -1,5 +1,5 @@
 import { Component } from "preact";
-import Typewriter from "npm:typewriter-effect/dist/core.js";
+import Typewriter from "typewriter-effect/dist/core.js";
 
 interface TypingAnimationProps {
   strings: string[];
