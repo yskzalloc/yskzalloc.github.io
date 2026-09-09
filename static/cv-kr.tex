@@ -1,0 +1,212 @@
+%------------------------
+% Ethan's Résumé Template
+% Author: necusjz
+% License: CC-BY-4.0
+%------------------------
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\usepackage{fontawesome5}
+\usepackage{ragged2e}
+\usepackage{etoolbox}
+\usepackage{tikz}
+\usepackage{kotex}
+\input{glyphtounicode}
+
+% font options
+\usepackage{newpxtext}
+\linespread{1.05}  % palladio needs more leading (space between lines)
+\usepackage[T1]{fontenc}
+
+\pagestyle{fancy}
+\fancyhf{}  % clear all header and footer fields
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% adjust margins
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1.0in}
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+\setlength{\footskip}{5pt}
+
+% sections formatting
+\titleformat{\section}{
+  \vspace{-2pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule\vspace{-5pt}]
+
+% ensure that generate pdf is machine readable/ATS parsable
+\pdfgentounicode=1
+
+% custom commands
+\newcommand{\cvitem}[1]{
+  \item\small{
+    {#1\vspace{-2pt}}
+  }
+}
+
+\newcommand{\cvheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \small#3 & \small #4 \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\cvheadingstart}{\begin{itemize}[leftmargin=0in, label={}]}
+\newcommand{\cvheadingend}{\end{itemize}}
+\newcommand{\cvitemstart}{\begin{itemize}[label=\textopenbullet]\justifying}
+\newcommand{\cvitemend}{\end{itemize}\vspace{-5pt}}
+
+\newcommand{\cvskill}[2]{
+  \textcolor{black}{\textbf{#1}}\hfill
+  \foreach \x in {1,...,5}{%
+    \space{\ifnumgreater{\x}{#2}{\color{black!80!white!20}}{\color{black}}\faSquare}}\par%
+  \vspace{-2pt}
+}
+
+\renewcommand\labelitemii{$\vcenter{\hbox{\footnotesize$\bullet$}}$}
+
+\begin{document}
+
+% contact information
+\begin{center}
+  \textbf{\LARGE\scshape 김윤성} \\
+  \vspace{1pt}\small
+  \href{mailto:p4ranlee@gmail.com}{\textbf{이메일}}
+  $\ \diamond\ $ ysk@kzalloc.com
+  \textbf{전화}
+  $\ \diamond\ $+82 10-3081-9242
+  \href{https://github.com/kzall0c}{\textbf{GitHub}}
+  \href{https://www.linkedin.com/in/yunseong-kim-linux-kernel/}{\textbf{LinkedIn}}
+\end{center}
+
+\section{경력}
+\cvheadingstart
+  \cvheading
+    {에릭슨 LG}{대한민국 서울}
+    {시스템 소프트웨어 개발자}{2023.07 - 현재}
+  \cvitemstart
+    \cvitem{이동성 및 제어 개발팀 (Mobility and Control Development Team)}
+  \cvitemend
+
+  \cvheading
+    {안랩}{대한민국 분당구}
+    {시스템 소프트웨어 개발자}{2022.01 - 2023.06}
+  \cvitemstart
+    \cvitem{EDR(엔드포인트 탐지 및 대응) 개발팀}
+  \cvitemend
+
+  \cvheading
+    {이노와이어리스}{대한민국 분당구}
+    {소프트웨어 개발자}{2018.08 - 2021.12}
+  \cvitemstart
+    \cvitem{서버 소프트웨어 개발팀}
+\cvitemend
+
+\cvheadingend
+
+\section{학력}
+\cvheadingstart
+  \cvheading
+    {한국항공대학교}{대한민국 고양시}
+    {전자 및 항공전자공학 학사}{2010.03 - 2018.02}
+  \cvheading
+    {리눅스 재단(Linux Foundation)}{온라인}
+    {SKF201: 위협 모델링(Threat Modeling)}{2025.09 - 2025.09}
+  \cvheading
+    {리눅스 재단(Linux Foundation)}{온라인}
+    {LFD441: 리눅스 커널과 보안(Security and the Linux Kernel)}{2024.07 - 2024.07}
+\cvheadingend
+
+\section{주요 성과}
+\cvheadingstart
+\item
+\cvitemstart
+  \cvitem{\textbf{리눅스 커널 보안 개발 (Linux Kernel Security Development)}}
+  \begin{itemize}
+    \item \textbf{LSM}, \textbf{kprobe}, \textbf{eBPF} 기반의 보안 모듈을 개발
+    \item \textbf{perf 도구}를 사용하여 CPU, 메모리, I/O 성능을 프로파일링 및 최적화
+  \end{itemize}
+
+\cvitem{\textbf{\href{https://lore.kernel.org/all/?q=Yunseong}{리눅스 커널 업스트림 기여 (Upstream Linux Kernel Contributions)}}}
+  \begin{itemize}
+    \item 4건의 보안 취약점을 보고하고, 메인라인 커널에 패치 병합:
+    \href{https://lore.kernel.org/linux-cve-announce/2025081651-CVE-2025-38510-f67d@gregkh/}{\#1},
+    \href{https://lore.kernel.org/linux-cve-announce/2024122721-CVE-2024-53186-7c05@gregkh/}{\#2},
+    \href{https://lore.kernel.org/linux-cve-announce/2024080740-CVE-2024-42235-efae@gregkh/}{\#3},
+    \href{https://lore.kernel.org/linux-cve-announce/2024072929-CVE-2024-41021-f857@gregkh/}{\#4}
+    \item 안정화(LTS) 커널 버전으로 취약점 수정 백포팅 수행
+  \end{itemize}
+
+ \cvitem{\href{http://perf.wiki.kernel.org/}{\textbf{Linux perf tools 위키 유지보수자}};}
+ {\textbf{uftrace 기여:} \href{https://github.com/namhyung/uftrace/pulls?q=author\%3Aparanlee}{\#1}, \href{https://github.com/namhyung/uftrace/pulls?q=author%3Akzall0c+}{\#2}}
+
+  \cvitem{\textbf{5G 코어 시스템 보안 R\&D}}
+  \begin{itemize}
+    \item \textbf{eBPF + Rust (aya-rs)} 기반의 NGAP 방화벽 개발
+    \item \textbf{ASN.1 코덱}부터 \textbf{5G NGAP 프로토콜 처리}까지 취약점 탐색
+  \end{itemize}
+
+  \cvitem{\textbf{클라우드 네이티브 분산 시스템}}
+  \begin{itemize}
+    \item \textbf{Erlang/OTP} 기반 대규모 분산 5G 애플리케이션 개발
+  \end{itemize}
+
+\cvitemend
+\cvheadingend
+
+\section{기술 역량}
+\cvheadingstart
+\item
+\cvitemstart
+    \cvitem{\textbf{Linux Kernel Security Module} 개발: QEMU, LSM, crash tools, ftrace, perf tools, Wireshark 활용}
+    \cvitem{C/C++ 기반의 강력한 프로그래밍 및 디버깅 능력}
+    \cvitem{\textbf{Fuzzing}: \textbf{syzkaller}, \textbf{AFL++} 사용 경험; Git 버전 관리, Jenkins CI/CD, Erlang/OTP, Python, shell 스크립팅}
+    \cvitem{\textbf{리눅스 커널 CI/CD 및 검증 자동화}}
+    \begin{itemize}
+      \item \textbf{VMware ESXi, vSphere} 기반 가상화 인프라에서 여러 Jenkins 파이프라인 관리
+    \end{itemize}
+\cvitemend
+\cvheadingend
+
+\section{발표 및 출판}
+\cvheadingstart
+\item
+\cvitemstart
+
+\cvitem{\href{https://youtu.be/__DURK3p218?si=aPn0f2Kixq3V4P7T}{{\textbf{DebConf25:} \textit{Rethinking Cryptography in the Linux Kernel – 포스트 양자 암호(PQC) 시대를 위한 준비}}} }
+
+\cvitem{\href{https://youtu.be/nGxzzORZm1o?si=1k9Mz54uqYNatnO1}{\textbf{Head First Reporting of Linux Kernel CVEs:} \textit{커널 퍼저의 실전 활용}}}
+\begin{itemize}
+  \item syzkaller를 이용한 KSMBD 및 s390x 취약점 분석 및 리눅스 커널 CVE 발견 사례 발표
+\end{itemize}
+
+  \cvitem{\href{https://youtu.be/RRJN8JS5xAE?si=_X-7-OyXzPrcyGes}{{\textbf{DebConf24:}} \textit{perf In Action}} - 페이지 폴트 비교 및 Linux perf를 이용한 퍼징 활용 사례 소개}
+
+  \cvitem{\textbf{\href{https://www.linkedin.com/posts/yunseong-kim-linux-kernel_xilinx-fpga-linux-activity-7341153544160362496-_sBg?utm_source=share&utm_medium=member_desktop&rcm=ACoAADZ7vgEBrd70u0-SnyUUHL-swTgyhcvNQGE}{ZYBO Z7-20 AES 암호화 가속기}} - \textit{\textbf{PetaLinux v2025.1}} 환경에서 HW/SW 공동 개발 수행}
+
+  \cvitem{\href{https://www.hackster.io/p4ranlee/zybo-z7-20-webcam-on-the-petalinux-c28709}{{\textbf{Hackster.io:}} \textit{PetaLinux 프로젝트에서 ZYBO Z7-20 웹캠 구현}}}
+  
+\cvitemend
+\cvheadingend
+
+\end{document}

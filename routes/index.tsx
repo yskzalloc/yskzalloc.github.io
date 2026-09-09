@@ -137,10 +137,10 @@ interface Experience {
 function Experience() {
   const experiences: Experience[] = [
     {
-      title: "System Software Developer",
-      company: "Ericsson",
+      title: "Senior Linux Engineer",
+      company: "Ericsson / Ericsson Software Technology",
       timePeriod: "07/2023 - Present",
-      location: "Seoul, South Korea",
+      location: "Stockholm, Sweden",
     },
     {
       title: "System Software Developer",

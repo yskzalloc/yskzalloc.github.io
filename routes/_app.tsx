@@ -61,12 +61,12 @@ export default function App({ Component }: PageProps) {
   const socials = [
     {
       name: "GitHub",
-      url: "https://github.com/kzall0c",
+      url: "https://github.com/yskzalloc",
       icon: "fa-brands:github",
     },
     {
       name: "Linux Kernel Mailing List",
-      url: "https://lore.kernel.org/all/?q=Yunseong",
+      url: "https://lore.kernel.org/all/?q=yunseong",
       icon: "fa-brands:linux",
     },
     {

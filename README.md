@@ -32,7 +32,8 @@ portfolio page, follow these simple steps:
 
 ## Setting Up Locally
 
-1. Clone this project `git clone https://github.com/yskzalloc/yskzalloc.github.io`
+1. Clone this project
+   `git clone https://github.com/yskzalloc/yskzalloc.github.io`
 2. [Install deno](https://docs.deno.com/runtime/manual/getting_started/installation)
    (if you havent already)
 3. Navigate to the cloned directory `cd yskzalloc.github.io`

@@ -27,12 +27,12 @@ export default function AppBar() {
   const socials = [
     {
       name: "GitHub",
-      url: "https://github.com/kzall0c",
+      url: "https://github.com/yskzalloc",
       icon: "fa-brands:github",
     },
     {
       name: "Linux Kernel Mailing List",
-      url: "https://lore.kernel.org/all/?q=Yunseong",
+      url: "https://lore.kernel.org/all/?q=yunseong",
       icon: "fa-brands:linux",
     },
     {
@@ -63,7 +63,15 @@ export default function AppBar() {
         Portfolio
       </a>
 
-      <ul class="flex gap-2">
+      {
+        /*
+        Mobile: pin the actions as a vertical column fixed to the right edge so
+        they don't add height to the nav flow (main content is not pushed down).
+        sm and up: normal horizontal bar in flow.
+      */
+      }
+      <ul class="fixed top-2 right-2 z-20 flex flex-col items-end gap-2
+          sm:static sm:flex-row sm:items-center">
         <li>
           <a
             class="btn btn-primary text-base-100"
@@ -90,7 +98,7 @@ export default function AppBar() {
           </button>
         </li>
 
-        <li>
+        <li class="flex flex-col items-end gap-2 sm:flex-row sm:items-center">
           {socials.map((social) => (
             <a
               class="btn btn-outline-primary"
